@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans%3Awght%40400%3B700&display=swap%27%29%3B");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: hsl(256, 33%, 92%);
+  font-family: "Josefin Sans";
+}
+.top-bgimg {
+  width: 100%;
+  height: 225px;
+  background-image: url("https://source.unsplash.com/user/erondu/1600x900");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main {
+  position: absolute;
+  top: 0px;
+  height: 100vh;
+  width: 100%;
+  padding: 10% 20%;
+}
+.header {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  letter-spacing: 10px;
+}
+
+.type-todo {
+  width: 100%;
+  color: #d5d5d5;
+  background: #2c2c2c;
+  margin-top: 24px;
+  padding: 10px;
+  height: 55px;
+  display: grid;
+  grid-template-columns: 10% auto;
+  align-items: center;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid hsl(237, 97%, 61%);
+}
+#todo-input {
+  padding: 5px;
+}
+#todo-input:focus {
+  outline: none;
+}
+.todos {
+  margin: top 24px;
+  color: #d5d5d5;
+  background-color: hsl(235, 24%, 19%);
+}
+.todo {
+  width: 100%;
+  height: 55px;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  align-items: center;
+  padding: 10px;
+  font-size: 20px;
+}
+.todo input[type="checkbox"] {
+  display: none;
+}
+.active {
+  position: relative;
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(289, 87%, 65%));
+}
+.active::before {
+  content: "~";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+.remarks {
+  position: relative;
+  background: #9b9696;
+  height: 55px;
+  color: #d5d5d5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.remarks div {
+  padding: 0 10px;
+}
+.filters {
+  background-color: #9b9696;
+  height: 55px;
+  position: absolute;
+  width: 100%;
+  bottom: -70px;
+  display: flex;
+  border-radius: 8px;
+  padding: 25px;
+  color: #d5d5d5;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-evenly;
+}
+
+.filterActive {
+  color: hsl(237, 91%, 56%);
+}
+
+@media screen and (max-width: 800px) {
+  .header,
+  .type-todo,
+  .todos,
+  .remarks {
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .todo input {
+    width: inherit;
+  }
+
+  .filters {
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    background: transparent;
+    transform: translateX(-50%);
+  }
+}
